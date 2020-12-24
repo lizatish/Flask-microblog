@@ -2,6 +2,7 @@ import logging
 import os
 from logging.handlers import SMTPHandler, RotatingFileHandler
 from flask import Flask
+from flask_bootstrap import Bootstrap
 from flask_login import LoginManager
 from flask_mail import Mail
 from flask_migrate import Migrate
@@ -46,5 +47,7 @@ if not app.debug:
     app.logger.info('Microblog startup')
 
 mail = Mail(app)
+
+bootstrap = Bootstrap(app)
 
 from app import routes, models, errors

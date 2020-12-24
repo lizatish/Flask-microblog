@@ -99,3 +99,8 @@ jinja2.exceptions.TemplateNotFound: reset_password_request.html
 2020-11-12 17:50:31,161 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:46]
 2020-11-12 18:30:52,318 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:46]
 2020-12-23 12:07:27,857 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:46]
+2020-12-23 19:49:20,628 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:47]
+2020-12-23 19:50:09,501 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:47]
+2020-12-23 20:09:44,973 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:47]
+2020-12-23 20:09:57,066 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:47]
+2020-12-23 20:10:04,899 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:47]
