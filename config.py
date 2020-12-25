@@ -1,5 +1,7 @@
 import os
+
 basedir = os.path.abspath(os.path.dirname(__file__))
+
 
 class Config(object):
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'you-will-never-guess'
@@ -16,4 +18,4 @@ class Config(object):
 
     POSTS_PER_PAGE = 10
 
-
+    LANGUAGES = ['ru', 'en', 'es']
