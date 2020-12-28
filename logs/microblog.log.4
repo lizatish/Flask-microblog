@@ -1,61 +1,17 @@
-2020-12-25 23:51:27,872 ERROR: Exception on /explore [GET] [in /home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/app.py:1891]
-Traceback (most recent call last):
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1276, in _execute_context
-    self.dialect.do_execute(
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 593, in do_execute
-    cursor.execute(statement, parameters)
-sqlite3.OperationalError: no such column: post.language
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/liza/PycharmProjects/microblog2/app/routes.py", line 53, in explore
-    posts = Post.query.order_by(Post.timestamp.desc()).paginate(
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask_sqlalchemy/__init__.py", line 496, in paginate
-    items = self.limit(per_page).offset((page - 1) * per_page).all()
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 3373, in all
-    return list(self)
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 3535, in __iter__
-    return self._execute_and_instances(context)
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 3560, in _execute_and_instances
-    result = conn.execute(querycontext.statement, self._params)
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1011, in execute
-    return meth(self, multiparams, params)
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 298, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1124, in _execute_clauseelement
-    ret = self._execute_context(
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1316, in _execute_context
-    self._handle_dbapi_exception(
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1510, in _handle_dbapi_exception
-    util.raise_(
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
-    raise exception
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1276, in _execute_context
-    self.dialect.do_execute(
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 593, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: post.language
-[SQL: SELECT post.id AS post_id, post.body AS post_body, post.timestamp AS post_timestamp, post.user_id AS post_user_id, post.language AS post_language 
-FROM post ORDER BY post.timestamp DESC
- LIMIT ? OFFSET ?]
-[parameters: (10, 0)]
-(Background on this error at: http://sqlalche.me/e/13/e3q8)
-2020-12-25 23:51:28,623 ERROR: Exception on /index [GET] [in /home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/app.py:1891]
+2020-12-25 16:43:50,482 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:52]
+2020-12-25 22:24:26,821 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:53]
+2020-12-25 22:38:04,982 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:53]
+2020-12-25 23:02:44,584 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:53]
+2020-12-25 23:31:11,920 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:53]
+2020-12-25 23:31:43,288 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:53]
+2020-12-25 23:32:20,875 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:53]
+2020-12-25 23:33:08,539 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:53]
+2020-12-25 23:33:45,427 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:53]
+2020-12-25 23:35:14,471 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:53]
+2020-12-25 23:47:11,688 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:53]
+2020-12-25 23:47:38,037 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:53]
+2020-12-25 23:51:14,398 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:53]
+2020-12-25 23:51:17,873 ERROR: Exception on /index [GET] [in /home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1276, in _execute_context
     self.dialect.do_execute(

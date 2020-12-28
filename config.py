@@ -19,3 +19,5 @@ class Config(object):
     POSTS_PER_PAGE = 10
 
     LANGUAGES = ['ru', 'en', 'es']
+    IAM_TOKEN = os.environ.get('IAM_TOKEN')
+#     export IAM_TOKEN=

@@ -1,4 +1,13 @@
-2020-11-09 23:25:55,992 ERROR: Exception on /reset_password_request [GET] [in /home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/app.py:1891]
+2020-12-25 23:51:39,917 ERROR: Exception on /user/1 [GET] [in /home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: post.language
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,28 +21,51 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/liza/PycharmProjects/microblog2/app/routes.py", line 182, in reset_password_request
-    return render_template('reset_password_request.html',
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/templating.py", line 138, in render_template
-    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/jinja2/environment.py", line 930, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/jinja2/environment.py", line 883, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/jinja2/environment.py", line 857, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/jinja2/loaders.py", line 115, in load
-    source, filename, uptodate = self.get_source(environment, name)
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/templating.py", line 60, in get_source
-    return self._get_source_fast(environment, template)
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/templating.py", line 89, in _get_source_fast
-    raise TemplateNotFound(template)
-jinja2.exceptions.TemplateNotFound: reset_password_request.html
-2020-11-12 16:46:26,879 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:46]
-2020-11-12 17:45:22,706 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:46]
-2020-11-12 17:47:18,467 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:46]
-2020-11-12 17:48:07,924 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:46]
-2020-11-12 17:48:18,450 ERROR: Exception on /reset_password_request [GET] [in /home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/app.py:1891]
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/liza/PycharmProjects/microblog2/app/routes.py", line 140, in user
+    posts = user.posts.order_by(Post.timestamp.desc()).paginate(
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask_sqlalchemy/__init__.py", line 496, in paginate
+    items = self.limit(per_page).offset((page - 1) * per_page).all()
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 3373, in all
+    return list(self)
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 3535, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 3560, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1124, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1316, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1510, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: post.language
+[SQL: SELECT post.id AS post_id, post.body AS post_body, post.timestamp AS post_timestamp, post.user_id AS post_user_id, post.language AS post_language 
+FROM post 
+WHERE ? = post.user_id ORDER BY post.timestamp DESC
+ LIMIT ? OFFSET ?]
+[parameters: (4, 10, 0)]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+2020-12-25 23:51:45,359 ERROR: Exception on /index [GET] [in /home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: post.language
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -47,66 +79,41 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/liza/PycharmProjects/microblog2/app/routes.py", line 191, in reset_password_request
-    title='Reset Password', form=form)
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/templating.py", line 138, in render_template
-    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/jinja2/environment.py", line 930, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/jinja2/environment.py", line 883, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/jinja2/environment.py", line 857, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/jinja2/loaders.py", line 115, in load
-    source, filename, uptodate = self.get_source(environment, name)
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/templating.py", line 60, in get_source
-    return self._get_source_fast(environment, template)
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/templating.py", line 89, in _get_source_fast
-    raise TemplateNotFound(template)
-jinja2.exceptions.TemplateNotFound: reset_password_request.html
-2020-11-12 17:50:02,937 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:46]
-2020-11-12 17:50:09,595 ERROR: Exception on /reset_password_request [GET] [in /home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/app.py:1891]
-Traceback (most recent call last):
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/liza/PycharmProjects/microblog2/app/routes.py", line 190, in reset_password_request
-    return render_template('reset_password_request.html',
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/templating.py", line 138, in render_template
-    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/jinja2/environment.py", line 930, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/jinja2/environment.py", line 883, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/jinja2/environment.py", line 857, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/jinja2/loaders.py", line 115, in load
-    source, filename, uptodate = self.get_source(environment, name)
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/templating.py", line 60, in get_source
-    return self._get_source_fast(environment, template)
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/templating.py", line 89, in _get_source_fast
-    raise TemplateNotFound(template)
-jinja2.exceptions.TemplateNotFound: reset_password_request.html
-2020-11-12 17:50:31,161 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:46]
-2020-11-12 18:30:52,318 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:46]
-2020-12-23 12:07:27,857 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:46]
-2020-12-23 19:49:20,628 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:47]
-2020-12-23 19:50:09,501 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:47]
-2020-12-23 20:09:44,973 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:47]
-2020-12-23 20:09:57,066 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:47]
-2020-12-23 20:10:04,899 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:47]
-2020-12-24 16:21:28,117 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:48]
-2020-12-24 16:26:09,031 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:48]
-2020-12-24 16:26:30,971 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:48]
-2020-12-25 16:26:11,407 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:50]
-2020-12-25 16:26:35,424 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:50]
-2020-12-25 16:36:28,413 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:52]
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/liza/PycharmProjects/microblog2/app/routes.py", line 38, in index
+    posts = current_user.followed_posts().paginate(
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask_sqlalchemy/__init__.py", line 496, in paginate
+    items = self.limit(per_page).offset((page - 1) * per_page).all()
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 3373, in all
+    return list(self)
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 3535, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 3560, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1124, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1316, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1510, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: post.language
+[SQL: SELECT anon_1.post_id AS anon_1_post_id, anon_1.post_body AS anon_1_post_body, anon_1.post_timestamp AS anon_1_post_timestamp, anon_1.post_user_id AS anon_1_post_user_id, anon_1.post_language AS anon_1_post_language 
+FROM (SELECT post.id AS post_id, post.body AS post_body, post.timestamp AS post_timestamp, post.user_id AS post_user_id, post.language AS post_language 
+FROM post JOIN followers ON followers.followed_id = post.user_id 
+WHERE followers.follower_id = ? UNION SELECT post.id AS post_id, post.body AS post_body, post.timestamp AS post_timestamp, post.user_id AS post_user_id, post.language AS post_language 
+FROM post 
+WHERE post.user_id = ?) AS anon_1 ORDER BY anon_1.post_timestamp DESC
+ LIMIT ? OFFSET ?]
+[parameters: (4, 4, 10, 0)]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
