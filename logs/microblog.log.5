@@ -1,4 +1,4 @@
-2020-11-09 23:25:55,992 ERROR: Exception on /reset_password_request [GET] [in /home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/app.py:1891]
+2020-12-29 13:25:38,950 ERROR: Exception on /index [GET] [in /home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,28 +12,27 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/liza/PycharmProjects/microblog2/app/routes.py", line 182, in reset_password_request
-    return render_template('reset_password_request.html',
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/templating.py", line 138, in render_template
-    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/jinja2/environment.py", line 930, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/jinja2/environment.py", line 883, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/jinja2/environment.py", line 857, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/jinja2/loaders.py", line 115, in load
-    source, filename, uptodate = self.get_source(environment, name)
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/templating.py", line 60, in get_source
-    return self._get_source_fast(environment, template)
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/templating.py", line 89, in _get_source_fast
-    raise TemplateNotFound(template)
-jinja2.exceptions.TemplateNotFound: reset_password_request.html
-2020-11-12 16:46:26,879 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:46]
-2020-11-12 17:45:22,706 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:46]
-2020-11-12 17:47:18,467 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:46]
-2020-11-12 17:48:07,924 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:46]
-2020-11-12 17:48:18,450 ERROR: Exception on /reset_password_request [GET] [in /home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/app.py:1891]
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask_login/utils.py", line 271, in decorated_view
+    return current_app.login_manager.unauthorized()
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask_login/login_manager.py", line 174, in unauthorized
+    redirect_url = make_login_url(login_view, next_url=request.url)
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask_login/utils.py", line 120, in login_url
+    base = expand_login_view(login_view)
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask_login/utils.py", line 97, in expand_login_view
+    return url_for(login_view)
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/app.py", line 2216, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/helpers.py", line 357, in url_for
+    rv = url_adapter.build(
+  File "/usr/local/lib/python3.8/dist-packages/werkzeug/routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'auth.login' instead?
+2020-12-29 13:26:47,908 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:54]
+2020-12-29 13:26:51,761 ERROR: Exception on / [GET] [in /home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -47,25 +46,27 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/liza/PycharmProjects/microblog2/app/routes.py", line 191, in reset_password_request
-    title='Reset Password', form=form)
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/templating.py", line 138, in render_template
-    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/jinja2/environment.py", line 930, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/jinja2/environment.py", line 883, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/jinja2/environment.py", line 857, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/jinja2/loaders.py", line 115, in load
-    source, filename, uptodate = self.get_source(environment, name)
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/templating.py", line 60, in get_source
-    return self._get_source_fast(environment, template)
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/templating.py", line 89, in _get_source_fast
-    raise TemplateNotFound(template)
-jinja2.exceptions.TemplateNotFound: reset_password_request.html
-2020-11-12 17:50:02,937 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:46]
-2020-11-12 17:50:09,595 ERROR: Exception on /reset_password_request [GET] [in /home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/app.py:1891]
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask_login/utils.py", line 271, in decorated_view
+    return current_app.login_manager.unauthorized()
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask_login/login_manager.py", line 174, in unauthorized
+    redirect_url = make_login_url(login_view, next_url=request.url)
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask_login/utils.py", line 120, in login_url
+    base = expand_login_view(login_view)
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask_login/utils.py", line 97, in expand_login_view
+    return url_for(login_view)
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/app.py", line 2216, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/helpers.py", line 357, in url_for
+    rv = url_adapter.build(
+  File "/usr/local/lib/python3.8/dist-packages/werkzeug/routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'auth.login' instead?
+2020-12-29 13:27:02,887 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:54]
+2020-12-29 13:27:05,242 ERROR: Exception on / [GET] [in /home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -79,34 +80,23 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/liza/PycharmProjects/microblog2/app/routes.py", line 190, in reset_password_request
-    return render_template('reset_password_request.html',
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/templating.py", line 138, in render_template
-    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/jinja2/environment.py", line 930, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/jinja2/environment.py", line 883, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/jinja2/environment.py", line 857, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/jinja2/loaders.py", line 115, in load
-    source, filename, uptodate = self.get_source(environment, name)
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/templating.py", line 60, in get_source
-    return self._get_source_fast(environment, template)
-  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/templating.py", line 89, in _get_source_fast
-    raise TemplateNotFound(template)
-jinja2.exceptions.TemplateNotFound: reset_password_request.html
-2020-11-12 17:50:31,161 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:46]
-2020-11-12 18:30:52,318 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:46]
-2020-12-23 12:07:27,857 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:46]
-2020-12-23 19:49:20,628 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:47]
-2020-12-23 19:50:09,501 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:47]
-2020-12-23 20:09:44,973 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:47]
-2020-12-23 20:09:57,066 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:47]
-2020-12-23 20:10:04,899 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:47]
-2020-12-24 16:21:28,117 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:48]
-2020-12-24 16:26:09,031 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:48]
-2020-12-24 16:26:30,971 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:48]
-2020-12-25 16:26:11,407 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:50]
-2020-12-25 16:26:35,424 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:50]
-2020-12-25 16:36:28,413 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:52]
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask_login/utils.py", line 271, in decorated_view
+    return current_app.login_manager.unauthorized()
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask_login/login_manager.py", line 174, in unauthorized
+    redirect_url = make_login_url(login_view, next_url=request.url)
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask_login/utils.py", line 120, in login_url
+    base = expand_login_view(login_view)
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask_login/utils.py", line 97, in expand_login_view
+    return url_for(login_view)
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/app.py", line 2216, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/liza/PycharmProjects/microblog2/venv/lib/python3.8/site-packages/flask/helpers.py", line 357, in url_for
+    rv = url_adapter.build(
+  File "/usr/local/lib/python3.8/dist-packages/werkzeug/routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'auth.login' instead?
+2020-12-29 13:27:17,378 INFO: Microblog startup [in /home/liza/PycharmProjects/microblog2/app/__init__.py:54]
