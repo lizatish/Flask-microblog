@@ -3,7 +3,7 @@ import os
 from dotenv import load_dotenv
 
 basedir = os.path.abspath(os.path.dirname(__file__))
-load_dotenv(os.path.join(basedir, '.env'))
+load_dotenv(os.path.join(basedir, 'load_config.env'))
 
 
 class Config(object):
@@ -23,4 +23,5 @@ class Config(object):
 
     LANGUAGES = ['ru', 'en', 'es']
     IAM_TOKEN = os.environ.get('IAM_TOKEN')
-#     export IAM_TOKEN=
+    ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')
+    LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
