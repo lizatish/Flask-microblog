@@ -3,7 +3,7 @@ from werkzeug.utils import redirect
 from app import db
 from app.auth.email import send_password_reset_email
 from werkzeug.urls import url_parse
-from flask_login import login_user, current_user
+from flask_login import login_user, current_user, logout_user
 from app.auth.forms import LoginForm, RegistrationForm, ResetPasswordRequestForm, ResetPasswordForm
 from app.auth import bp
 from app.models import User
@@ -57,6 +57,12 @@ def reset_password_request():
         return redirect(url_for('auth.login'))
     return render_template('auth/reset_password_request.html',
                            title=_('Reset Password'), form=form)
+
+
+@bp.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('main.index'))
 
 
 @bp.route('/reset_password/<token>', methods=['GET', 'POST'])
