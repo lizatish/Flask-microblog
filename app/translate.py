@@ -24,4 +24,3 @@ def translate(text, dest_language):
         return _('Error: the translation service failed.')
 
     return answer.json()['translations'][0]['text']
-
