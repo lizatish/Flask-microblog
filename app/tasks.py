@@ -25,6 +25,7 @@ def example(seconds):
     print('Task completed')
 
 
+
 def _set_task_progress(progress):
     job = get_current_job()
     if job:
